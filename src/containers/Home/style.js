@@ -18,21 +18,7 @@ height: 354px;
 margin-top: 11px;
 margin-left: 36px;
 `
-export const H1 = styled.h1`
-color: #fff;
 
-width: 213px;
-height: 33px;
-font-size: 28px;
-font-weight: bold;
-line-height: 32.81px;
-align-items: center;
-
-margin-left: 50px ;
-margin-bottom: 62px;
-margin-top: 25PX;
-
-`
 export const Box = styled.div`
 p{
     margin-bottom: 0px;
@@ -60,28 +46,5 @@ font-weight: 300;
 line-height: normal;
 
 `
-export const Button = styled.button`
-margin-top: 34px;
-margin-bottom: 51px;
 
-display: flex;
-width: 342px;
-height: 68px;
-padding: 0px 113px;
-justify-content: center;
-align-items: center;
 
-background: #D93856;
-color: #fff;
-text-align: center;
-font-size: 17px;
-font-style: normal;
-font-weight: 900;
-line-height: 2.5px;
-
-`
-export const Order = styled.li`
-p{
-    color: #fff;
-}
-`

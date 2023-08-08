@@ -1,13 +1,18 @@
-import React, {useRef, useState} from "react";
-import { Container, Image, H1, InputLabel, Input, Button, Box, Order } from "./style";
+import React, { useRef, useState} from "react";
+import { Container, Image, InputLabel, Input, Box} from "./style";
+import H1 from '../../components/title'
+import Button from "../../components/button";
 import CodeBurguer from '../../assets/CodeBurguer.svg'
-import Trash from '../../assets/Trash.svg'
+
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const App = () =>{
 const inputOrder = useRef()
 const inputName = useRef()
 const [orders, setOrder] = useState([])
+
+const navigate = useNavigate()
 
   const addNewOrder = async() =>{
 const {data: newOrder} = await axios.post('http://localhost:3001/order',{
@@ -17,9 +22,10 @@ const {data: newOrder} = await axios.post('http://localhost:3001/order',{
 
 setOrder([...orders, newOrder])
 
+navigate('/pedidos')
+
 }
-console.log(orders)
-  return(
+return(
 <Container>
 
 <Image alt="logo-image" src={CodeBurguer}/>
@@ -34,15 +40,7 @@ console.log(orders)
 <Input ref={inputName} placeholder="Steve Jobs"/>
 </Box>
 
-<ul>
-  {
-   orders.map((order) => (
-<Order key={order.id}>
-  <p>{order.name}</p>
-</Order>    
-   ))
-  }
-</ul>
+
 
 <Button onClick={addNewOrder}>Novo pedido</Button>
 </Container>
